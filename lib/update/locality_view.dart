@@ -10,17 +10,23 @@ class LocalityView extends StatefulWidget {
 
 class _LocalityViewState extends State<LocalityView> {
 
-  CepModel model = CepModel('Nenhum', false);
+  CepModel model = CepModel('Nenhuma cidade', false);
 
   void updateModel (Function update) => setState((){ model = update(); });
+  void clearModel (Function clear) => setState((){ model = clear(); });
 
   void _updateCep(Future getLocality(), Function update) async {
 
-    update(() => CepModel('Nenhum', true));
+    update(() => CepModel('Nenhuma cidade', true));
 
     var locality = await cep.getLocality();
 
     update(() => CepModel(locality, false));
+  }
+
+  void _clearCep(Future getLocality(), Function clear) async {
+
+    clear(() => CepModel('Nenhuma cidade', false));
   }
 
   @override
@@ -30,6 +36,7 @@ class _LocalityViewState extends State<LocalityView> {
       context,
       'Cidade',
       () => _updateCep( cep.getLocality, (function) => updateModel(function)),
+      () => _clearCep( cep.getLocality, (function) => clearModel(function)),
       model
     );
 
