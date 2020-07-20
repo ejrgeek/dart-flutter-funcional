@@ -14,21 +14,23 @@ class _LocalityViewState extends State<LocalityView> {
 
   UpdateView updateView = UpdateView();
 
-
   void updateModel(Function update) => setState(() {
-        model = update();
-      });
+    model = update();
+  });
+
   void clearModel(Function clear) => setState(() {
-        model = clear();
-      });
+    model = clear();
+  });
 
   @override
   Widget build(BuildContext context) {
     return LocalityPage.buildPage(
-        context,
-        'Cidade',
-        () => updateView.updateCep(cep.getLocality, (function) => updateModel(function)),
-        () => updateView.clearCep(cep.getLocality, (function) => clearModel(function)),
-        model);
+      context,
+      'Flutter Funcional MVU',
+      () => updateView.updateCep(cep.getLocality, (function) => updateModel(function)),
+      () => updateView.clearCep(cep.getLocality, (function) => clearModel(function)),
+      model,
+    );
   }
+
 }

@@ -7,28 +7,40 @@ class LocalityPage {
       //
       appBar: AppBar(
         title: Text(title),
-        actions: <Widget>[
-          IconButton(
-            onPressed: clear,
-            icon: Icon(Icons.clear),)
-        ],
       ),
       //
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //
             model.loading
             ? CircularProgressIndicator()
-            : Text(model.locality)
+            : Text(model.locality),
+            //
+            SizedBox(height: 20,),
+            //
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                //
+                RaisedButton(
+                  onPressed: update,
+                  child: Text('Update', style: TextStyle(color: Colors.white),),
+                  color: Colors.green,
+                ),
+                //
+                RaisedButton(
+                  onPressed: clear,
+                  child: Text('Clear', style: TextStyle(color: Colors.white),),
+                  color: Colors.red,
+                ),
+                //
+              ],
+            )
+            //
           ]
         ),
-      ),
-      //
-      floatingActionButton: FloatingActionButton(
-        onPressed: update,
-        tooltip: 'Atualizar',
-        child: Icon(Icons.update),
       ),
     );
   }

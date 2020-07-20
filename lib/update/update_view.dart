@@ -14,4 +14,5 @@ class UpdateView {
   void clearCep(Future getLocality(), Function clear) async {
     clear(() => CepModel('Nenhuma cidade', false));
   }
+  
 }
