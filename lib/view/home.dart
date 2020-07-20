@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_funcional/update/locality_view.dart';
+import 'package:flutter_funcional/view/locality_view.dart';
 
 class Home extends StatefulWidget {
   @override
