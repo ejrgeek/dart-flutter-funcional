@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_funcional/model/cep_model.dart';
-import 'package:flutter_funcional/view/LocalityPage.dart';
+import 'package:flutter_funcional/view/locality_page.dart';
 import '../service/cep.dart' as cep;
 
 class LocalityView extends StatefulWidget {
