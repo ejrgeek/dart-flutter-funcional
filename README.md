@@ -5,4 +5,4 @@ Slide do trabalho: [Link do Google Slides](https://docs.google.com/presentation/
 Não tem explicação, mas umas googadas você aprende sobre programação funcional e sobre a arquitetura experimental MVU (Model-View-Update) :v
 
 Para testar:
-Clona o repositório, da um *Pub Get* depois troca o cep que ta no url da API, *flutter_funcional/lib/service/cep.dart* na linha 11, builda e testa :)
+Clona o repositório, da um *Pub Get* depois troca o cep que ta no url da API, */lib/service/cep.dart* na linha 11, builda e testa :)
