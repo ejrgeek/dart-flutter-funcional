@@ -27,8 +27,8 @@ class _LocalityViewState extends State<LocalityView> {
     return LocalityPage.buildPage(
       context,
       'Flutter Funcional MVU',
-      () => updateView.updateCep(cep.getLocality, (function) => updateModel(function)),
-      () => updateView.clearCep(cep.getLocality, (function) => clearModel(function)),
+      () => updateView.updateCep((function) => updateModel(function)),
+      () => updateView.clearCep((function) => clearModel(function)),
       model,
     );
   }
